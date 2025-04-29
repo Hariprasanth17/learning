@@ -1,0 +1,51 @@
+body {
+    background-color: aquamarine;
+    box-sizing: border-box;
+}
+
+h1 {
+    width: 800px;
+    height: 100px;
+    text-align: center;
+    border-radius: 30px;
+    font-family: sans-serif;
+    padding: 10px;
+    color: blue;
+    background-color: #05212A;
+
+
+
+}
+.bi{
+    font-size: 44px;
+    color: rgb(189, 200, 196);
+}
+h1:hover{
+    display: block;
+}
+
+/* .item-1 {
+ 
+height: 100px;
+width: 100px;
+background-color: blue;
+}
+
+.item-2 {
+  
+    height: 100px;
+    width: 100px;
+    background-color: blueviolet;
+}
+.item-4 {
+  
+    height: 100px;
+    width: 100px;
+    background-color: tomato;
+}
+
+.item-3 {
+    height: 100px;
+    width: 100px;
+    background-color: aqua;
+} */

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link rel="stylesheet" href="./main.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="container-inside">
+            <h1>Form</h1>
+            <form>
+                <div class="container-detail">
+
+                    <div>
+                        <label for="firstname">First Name :</label>
+                        <input type="text" name="firstname" id="firstname" placeholder="First Name" novalidate>
+                        <div id="firsterr"></div>
+                    </div>
+                    <div>
+                        <label for="lastname">Last Name :</label>
+                        <input type="text" name="lastname" id="lastname" placeholder="Last Name" novalidate>
+                        <div id="lasterr"> </div>
+                    </div>
+                    <div>
+                        <label for="email">Email Id :</label>
+                        <input type="email" name="email" id="email" placeholder="Email">
+                        <div id="emailerr"></div>
+                    </div>
+                    <div>
+                        <label for="regiterNum">Register Number :</label>
+                        <input type="number" name="regiterNum" id="regnum" placeholder="111421104023(12 digit)"
+                            pattern="[0-9]{12}">
+                        <div id="regerr"></div>
+                    </div>
+                    <div>
+                        <label for="pwd">Password :</label>
+                        <input type="password" id="psw" name="pwd" placeholder="********">
+                        <div id="pwderr"></div>
+                    </div>
+                    <div>
+                        <label for="pwd">Confirm Password :</label>
+                        <input type="password" id="cpwd" name="pwd" placeholder="********">
+                        <div id="cpswerr"></div>
+                    </div>
+
+                    <div>
+                        <label for="PhNum">Phone Number :</label>
+                        <input type="number" name="PhNum" id="ph" placeholder="1234567890">
+                        <div id="pherr"></div>
+                    </div>
+                    <div>
+                        <label for="birthday">Birthday :</label>
+                        <input type="date" id="birthday" name="birthday">
+                        <div id="birtherr"></div>
+                    </div>
+                    <div>
+                        <label for="appt">Age :</label>
+                        <input type="number" id="Age" name="appt " placeholder="23">
+                        <div id="ageerr"></div>
+                    </div>
+                    <div>
+                        <label for="Adhar">Adhar number :</label>
+                        <input type="num" id="Adhar" name="Adhar" placeholder="1234 5678 9101">
+                        <div id="adharerr"></div>
+                    </div>
+                </div class="container-detail">
+                <div class="half-container">
+                    <div class="selectInput">
+                        <div>
+                            <P>Select Gender</P>
+                            <input type="radio" name="gender" value="Male">
+                            <label for="gender">Male</label><br>
+                            <input type="radio" name="gender" value="Female">
+                            <label for="gender">Female</label><br>
+                            <div id="gendererr"></div>
+                        </div>
+                        <div>
+                            <P>Select Skills</P>
+                            <input type="checkbox" id="HTML" name="skills" value="HTML" />
+                            <label for="skills">HTML</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="CSS" name="skills" value="CSS" />
+                            <label for="skills">CSS</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="SQL" name="skills" value="SQL" />
+                            <label for="skills">SQL</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="Bootstrap" name="skills" value="Bootstrap" />
+                            <label for="skills">Bootstrap</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="js" name="skills" value="JavaScript" />
+                            <label for="skills">JavaScript</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="ts" name="skills" value="TypeScript" />
+                            <label for="skills">TypeScript</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="React" name="skills" value="React Js" />
+                            <label for="skills">React Js</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="python" name="skills" value="Python" />
+                            <label for="skills">Python</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="java" name="skills" value="JAVA" />
+                            <label for="skills">JAVA</label>
+                        </div>
+                        <div id="skillerr"></div>
+                    </div>
+                    <div class="selectRange">
+                        <div>
+                            <p>Language</p>
+                            <label for="lan">Tamil :</label><br>
+                            <input type="range" id="Tamil" name="lan" min="0" max="100"><br>
+                            <label for="lan">English :</label><br>
+                            <input type="range" id="English" name="lan" min="0" max="100"><br>
+                            <label for="lan">Telugu :</label><br>
+                            <input type="range" id="Telugu" name="lan" min="0" max="100"><br>
+                        </div>
+                        <div id="upload">
+                            <label for="cer">Upload Your Certificate :</label><br>
+                            <input type="file" id="Certificate" name="cer" multiple>
+                            <div id="certificateerr"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="button">
+                    <input type="reset" id="reset" value="Reset Form">
+                    <input type="submit" id="submit" name="submit" value="Submit">
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="./script.js"></script>
+    
+</body>
+
+</html>

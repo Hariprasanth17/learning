@@ -1,0 +1,17 @@
+ul{
+    background-color: rgb(43, 44, 32);
+    margin: 0;
+    padding: 0;
+    
+    overflow: hidden;
+}
+li a{
+    float: left;
+    padding: 20px;
+    display: block;
+    text-decoration: none;
+    color: bisque;
+}
+li a:hover{
+background-color: rgb(15, 13, 13);
+}

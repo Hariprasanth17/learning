@@ -1,0 +1,127 @@
+body {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+    font-size: 24px;
+    background: url(./assert/logo.svg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+}
+
+h1 {
+    font-family: sans-serif;
+    font-weight: 700;
+    font-size: 52px;
+    color: #564df5;
+}
+
+input::placeholder {
+    font-weight: 500;
+    opacity: 0.5;
+    font-size: 14px;
+}
+
+.container {
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+
+}
+
+.container-inside {
+    width: 75%;
+    border-radius: 10px;
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    margin: 10px 0px;
+    box-shadow: 0px 0px 2px 2px rgb(196, 194, 194);
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.container-detail {
+    position: relative;
+    left: 120px;
+}
+
+.container-detail div {
+    width: 49%;
+    margin-left: 5px;
+    display: inline-block;
+    text-align: left;
+    font-weight: 400;
+    line-height: 16px;
+    gap: 30px;
+}
+
+.container-detail input {
+    height: 30px;
+    width: 300px;
+    border-radius: 3px;
+    padding-left: 10px;
+    display: flex;
+    margin: 10px 0px;
+    cursor: pointer;
+}
+
+.half-container {
+    display: flex;
+    justify-content: space-evenly;
+    text-align: left;
+}
+
+.half-container .selectInput input {
+    height: 17px;
+    width: 17px;
+}
+
+.selectRange {
+    position: relative;
+    left: 82px;
+}
+
+.selectInput {
+    position: relative;
+    left: -90px;
+}
+
+.button input {
+    height: 30px;
+    width: 100px;
+    margin-bottom: 20px;
+    color: antiquewhite;
+    background-color: #4a42dd;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+input {
+    font-size: 18px;
+    accent-color: #4a42dd;
+    border: none;
+}
+
+.button input:hover {
+    background-color: #6c66df;
+    border: 1px solid rgb(246, 246, 246);
+
+
+}
+
+#upload {
+    margin-top: 60px;
+}
+
+.error {
+    color: rgb(192, 48, 48);
+    font-size: 12px;
+    position: relative;
+    top: -8px;
+}
+.half-container .error{
+    position: relative;
+    top: 5px;
+}

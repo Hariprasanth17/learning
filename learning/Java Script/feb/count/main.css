@@ -1,0 +1,27 @@
+body {
+    box-sizing: border-box;
+}
+
+.inde {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    gap: 10px;
+}
+
+.minus,
+.plus {
+    font-size: 100px;
+    color: green;
+    background-color: transparent;
+    border: 0;
+}
+
+.value {
+    font-size: 50px;
+}
+
+.minus {
+    color: rgb(71, 68, 68);
+}

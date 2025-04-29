@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./main.css">
+    <!-- bootstrap cdn -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+
+<body>
+    <div class="inde">
+        <button class="plus"><i class="bi bi-plus-circle-fill"></i></button>
+        <div class="value">0</div>
+        <button class="minus"><i class="bi bi-dash-circle-fill"></i></button>
+        <button>clear</button>
+    </div>
+    <script>
+        let count = 0;
+        document.querySelector(".plus").addEventListener("click", increment)
+        document.querySelector(".minus").addEventListener("click", decriment)
+        document.querySelector("button:last-child").addEventListener("click", clearCount)
+
+        const a = document.getElementsByClassName("value").item(0)
+
+        function increment() {
+            count++;
+            a.innerHTML = count;
+        }
+
+        function decriment() {
+            count--;
+            a.innerHTML = count;
+        }
+        function clearCount() {
+            count = 0;
+            a.innerHTML = count;
+        }
+        // console.log(a.innerHTML)
+        // console.log(a.innerText)
+    </script>
+</body>
+
+</html>

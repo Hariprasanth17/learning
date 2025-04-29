@@ -1,0 +1,23 @@
+/*h1 {
+    color: blueviolet;
+    margin: 20px;
+    border:2px solid;
+}
+h2 {
+    margin: auto;
+    width: 200px;
+    border: 2px solid;
+    border-color: #543fac;
+    border-width: 5px;
+}*/
+body {
+    margin:50px;
+    
+}
+p {
+    margin:inherit;
+    width: 200px;
+    border: 2px solid;
+    color: brown ;
+    border-color: gray;
+}

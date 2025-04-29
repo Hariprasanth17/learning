@@ -1,0 +1,9 @@
+.usestate-content .button{
+    display: flex;
+    gap: 20px;
+
+}
+.usestate-content .Text{
+   border: 3px solid rgb(205, 203, 200);
+   margin-bottom: 10px;
+}

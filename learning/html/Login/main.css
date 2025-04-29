@@ -1,0 +1,50 @@
+* {
+    background-color: aqua;
+    box-sizing: border-box;
+}
+
+.d-flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-2 div {
+    padding: 0px 50px;
+}
+
+.right-side {
+    height: 80%;
+    width: 100px;
+}
+
+.logo {
+    height: auto;
+}
+
+.logo img {
+    height: 50px;
+    width: 50px;
+}
+
+.form-inside {
+    height: min-content;
+}
+
+.form-inside h1 {
+    font-size: x-large;
+    font-weight: 600;
+    color: #525252;
+    height: auto;
+}
+
+.form-inside p {
+    height: auto;
+    font-size: 12px;
+    line-height: 22px;
+    color: #525252;
+    position: relative;
+    top: -7px
+}
+

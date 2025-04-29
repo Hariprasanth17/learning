@@ -1,0 +1,199 @@
+<!-- <!DOCTYPE html>
+<html>
+<body>
+<h1>HTML Geolocation</h1>
+<p>Click the button to get your coordinates.</p>
+
+<button onclick="getLocation()">Try It</button>
+
+<p id="demo"></p>
+
+<script>
+const x = document.getElementById("demo");
+
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition, showError);
+  } else { 
+    x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
+
+function showPosition(position) {
+console.table(position)
+  x.innerHTML = "Latitude: " + position.coords.latitude + 
+  "<br>Longitude: " + position.coords.longitude;
+}
+
+function showError(error) {
+  switch(error.code) {
+    case error.PERMISSION_DENIED:
+      x.innerHTML = "User denied the request for Geolocation."
+      break;
+    case error.POSITION_UNAVAILABLE:
+      x.innerHTML = "Location information is unavailable."
+      break;
+    case error.TIMEOUT:
+      x.innerHTML = "The request to get user location timed out."
+      break;
+    case error.UNKNOWN_ERROR:
+      x.innerHTML = "An unknown error occurred."
+      break;
+  }
+}
+</script>
+
+</body>
+</html>
+ -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Focus Input Label</title>
+   <style>
+     body {
+       font-family: Arial, sans-serif;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       height: 100vh;
+       margin: 0;
+       background-color: #f0f0f0;
+     }
+ 
+     .input-container {
+       position: relative;
+       width: 300px;
+     }
+ 
+     label {
+       position: absolute;
+       top: 50%;
+       left: 10px;
+       transform: translateY(-50%);
+       font-size: 16px;
+       color: #888;
+       background: #f0f0f0;
+       padding: 0 5px;
+       transition: all 0.3s ease;
+       pointer-events: none;
+     }
+ 
+     input {
+       width: 100%;
+       padding: 10px;
+       padding-left: 10px;
+       font-size: 16px;
+       border: 2px solid #ccc;
+       border-radius: 5px;
+       outline: none;
+       transition: border-color 0.3s ease;
+     }
+ 
+     input:focus {
+       border-color: #007BFF;
+     }
+ 
+     input:focus + label, input:not(:placeholder-shown) + label {
+       top: -2px;
+       font-size: 14px;
+       color: #007BFF;
+     }
+   </style>
+ </head>
+ <body>
+   <div class="input-container">
+     <input type="text" id="name" placeholder=" " required>
+     <label for="name">Your Name</label>
+   </div>
+ </body>
+ </html>
+ 
+ <!-- import React, { useState, useEffect, useRef } from 'react';
+import {
+  Animated,
+  TextInput,
+  View,
+  Text,
+  StyleSheet,
+  TouchableWithoutFeedback,
+} from 'react-native';
+
+const FloatingLabelInput = () => {
+  const [isFocused, setIsFocused] = useState(false);
+  const [text, setText] = useState('');
+  const labelAnim = useRef(new Animated.Value(0)).current;
+  const inputRef = useRef(null);
+
+  useEffect(() => {
+    Animated.timing(labelAnim, {
+      toValue: isFocused || text ? 1 : 0,
+      duration: 200,
+      useNativeDriver: false,
+    }).start();
+  }, [isFocused, text]);
+
+  const labelStyle = {
+    position: 'absolute',
+    left: 10,
+    top: labelAnim.interpolate({
+      inputRange: [0, 1],
+      outputRange: [12, -8],
+    }),
+
+    fontSize: labelAnim.interpolate({
+      inputRange: [0, 1],
+      outputRange: [16, 12],
+    }),
+    color: labelAnim.interpolate({
+      inputRange: [0, 1],
+      outputRange: ['#888', '#007BFF'],
+    }),
+    backgroundColor: '#f0f0f0',
+    paddingHorizontal: 5,
+    zIndex: 1,
+  };
+
+  return (
+    <View style={styles.container}>
+      <View style={styles.inputContainer}>
+        <TouchableWithoutFeedback onPress={() => inputRef.current?.focus()}>
+          <Animated.Text style={labelStyle}>Your Name</Animated.Text>
+        </TouchableWithoutFeedback>
+        <TextInput
+          ref={inputRef}
+          style={styles.input}
+          value={text}
+          onChangeText={setText}
+          onFocus={() => setIsFocused(true)}
+          onBlur={() => setIsFocused(false)}
+        />
+      </View>
+    </View>
+  );
+};
+
+export default FloatingLabelInput;
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#f0f0f0',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  inputContainer: {
+    position: 'relative',
+    width: 300,
+  },
+  input: {
+    height: 48,
+    borderWidth: 2,
+    borderColor: '#ccc',
+    borderRadius: 5,
+    paddingHorizontal: 10,
+    fontSize: 16,
+  },
+}); -->

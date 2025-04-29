@@ -1,0 +1,42 @@
+*{ 
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-color: aquamarine;
+    cursor: grabbing;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    flex-wrap: wrap;
+    overflow: hidden;
+}
+.container span{
+  position: relative;  
+  justify-content: center;
+  align-items: center;
+  min-height: 10px;
+  min-width: 10px;
+}
+.container span::before{
+content:"";
+position: absolute;
+background:url(https://cdn.pixabay.com/photo/2024/09/02/20/49/goat-9017896_1280.jpg);
+background-position: center;
+background-attachment: fixed;
+background-size: cover;
+transform: 20s;
+opacity: 0;
+pointer-events: none;
+width: 100%;
+height: 100%;
+}
+.container span:hover::before{
+    transition: 0s;
+    opacity: 1;
+    width: 1000%;
+    height: 1000%;
+}

@@ -1,0 +1,33 @@
+#div {
+    width: 100%;
+    height: 200px;
+    border: 3px red solid;
+}
+
+#parent {
+    width: 50%;
+    height: 150px;
+    border: 3px red solid;
+}
+
+#button {
+    height: 50px;
+    width: 180px;
+}
+
+.continer {
+    display: flex;
+    position: absolute;
+    top: 0;
+    background-color: rgba(221, 221, 221, 0.5);
+    width: 100vh;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+#eventDeligation {
+    margin-top: 30px;
+    border: 2px solid blue;
+    text-align: center;
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Generator</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+
+    <textarea id="atext1" rows="10" cols="20">
+        <input type = "text">
+    </textarea>
+    <select id="atext">
+        <option value="one">one</option>
+        <option value="two">two</option>
+        <option value="three">three</option>
+    </select>
+    <input onclick="showAlert()" type="button" value="Click me">
+
+
+
+    <script>
+        showAlert = () => {
+            const myText = document.getElementById("atext").value;
+            alert(myText);
+        }
+    </script>
+</body>
+
+</html>

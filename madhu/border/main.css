@@ -1,0 +1,44 @@
+h1 {
+    border-style: solid;
+    border-radius: 10px 5px;
+    border-color: chartreuse;
+    color: crimson;
+}
+
+#sd {
+    border-width: 20px;
+    border: 1px solid green;
+}
+
+h2 {
+    border: outset;
+}
+
+.op {
+    border: inset;
+}
+
+p {
+    border-style: solid;
+
+}
+
+.box {
+    height: 29em;
+    background-color: aquamarine;
+    width: 600px;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+flex-wrap: wrap-reverse;
+}
+
+.box1,.box11 {
+    height: 100px;
+    width: 100px;
+    background-color: blue;
+}
+
+.box11{
+    font-size: 20px;
+}

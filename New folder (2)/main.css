@@ -1,0 +1,47 @@
+* {
+    box-sizing: border-box;
+}
+
+
+.bi-search-heart {
+    height: 200px;
+    width: 200px;
+    font-size: 40px;
+}
+
+label {
+    position: absolute;
+    color: blueviolet;
+    left: 80px;
+    top: 37px;
+    padding: 0px 5px;
+    transition: transform 0.3s ease,
+        color 0.3s ease;
+    z-index: 1;
+}
+
+input {
+    position: relative;
+    top: 33px;
+    height: 40px;
+    border: 2px solid rgb(78, 76, 76);
+    border-radius: 8px;
+}
+i{
+    color: blue;
+}
+div {
+    position: relative;
+    top: 500px;
+    left: 500px;
+    background-color: rgb(88, 79, 140);
+    height: 100px;
+    width: 350px;
+    text-align: center;
+
+}
+
+input:focus+label {
+    transform: translateY(42px);
+
+}

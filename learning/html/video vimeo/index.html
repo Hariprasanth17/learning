@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #video01 {
+            height: 300px;
+        }
+
+        .second-video div {
+          margin-bottom: 20px;
+            height: auto;
+
+        }
+    </style>
+</head>
+<!--  npm install @vimeo/player -->
+
+<body>
+    <h1>Vimeo player SDK</h1>
+    <!-- <div>
+        <iframe id="video01"
+            src="https://player.vimeo.com/video/1054669154?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479
+            "></iframe>
+    </div> -->
+    <div id="currentTime">Time : 0</div>
+ 
+    <div class="second-video">
+        <div data-vimeo-id="1054669154" data-vimeo-width="640" id="video02"></div>
+        <div>
+            <input id="seekValue" type="number" name="seconds" />
+            <button id="seekButton">Seek to that Time</button>
+        </div>
+    </div>
+
+    <script src="https://player.vimeo.com/api/player.js"></script>
+    <script>
+        const iframe = document.getElementById('video02');
+        const currentTime = document.getElementById('currentTime');
+        const seekValue = document.getElementById('seekValue');
+        const seekButton = document.getElementById('seekButton');
+        const player = new Vimeo.Player(iframe);
+
+
+        let cuurentTime = localStorage.getItem("saveCurrentTime");
+        console.log("cuuree", cuurentTime)
+        player.setCurrentTime(cuurentTime)
+
+
+        console.log(seekValue)
+        seekButton.addEventListener("click", async () => {
+            seek = seekValue.value
+            player.setCurrentTime(seek)
+        })
+
+        let interval;
+
+        player.on("play", () => {
+            interval = setInterval(async () => {
+                const seconds = await player.getCurrentTime();
+                currentTime.innerText = `Time : ${seconds}`
+                localStorage.setItem("saveCurrentTime", seconds);
+            }, 3000);
+        });
+        player.on("pause", () => {
+            clearInterval(interval);
+        })
+
+
+    </script>
+</body>
+
+</html>

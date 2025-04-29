@@ -1,0 +1,96 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    font-size: 20px;
+    font-family: sans-serif;
+}
+
+.div {
+    box-shadow: 0px 0px 2px 2px rgb(196, 194, 194);
+    border-radius: 5px;
+    height: auto;
+    width: 80%;
+}
+
+.contain-inside {
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+}
+
+.contain-inside h1 {
+    font-weight: 700;
+    line-height: 28px;
+    color: rgb(241, 237, 237);
+}
+
+.contain-inside input {
+    height: 35px;
+    width: 400px;
+    border: 2px solid black;
+    border-radius: 3px;
+    padding-left: 10px;
+}
+
+input,
+input::placeholder {
+    font: 20px sans-serif;
+}
+
+/* #hidden {
+    display: none;
+} */
+
+.todolist-container-inside {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 35px;
+    width: 400px;
+    border-bottom: 1px dotted black;
+}
+
+button {
+    border-radius: 50%;
+    border: transparent;
+    cursor: pointer;
+}
+
+.todolist-container-inside>input {
+    height: 15px;
+    width: 15px;
+
+}
+
+#taskCount {
+    display: flex;
+    justify-content: space-between;
+    height: 35px;
+    width: 400px;
+    font-size: 14px;
+    color: rgb(119, 119, 119);
+}
+
+#clear:hover {
+    text-decoration: underline;
+    cursor: pointer;
+    color: rgb(59, 57, 57);
+}
+
+.done {
+    text-decoration: line-through;
+    color: rgb(130, 129, 129);
+}

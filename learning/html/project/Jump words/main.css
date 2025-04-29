@@ -1,0 +1,46 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #516182;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    display: flex;
+    gap: 20px;
+}
+
+.word {
+    font-size: 3rem;
+    color: #333;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    user-select: none;
+}
+
+.word.active {
+    animation: jump 0.6s ease-out forwards;
+}
+
+@keyframes jump {
+    0% {
+        transform: translateY(0);
+    }
+    30% {
+        transform: translateY(-50px);
+    }
+    50% {
+        transform: translateY(-80px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}

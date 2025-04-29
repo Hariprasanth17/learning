@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redux Toolkit Counter</title>
+</head>
+
+<body>
+    <div id="demo">0</div>
+    <button id="increment-btn">Increment</button>
+    <button id="decrement-btn">Decrement</button>
+
+    <script type="module">
+
+        import { createSlice, configureStore } from 'https://cdn.jsdelivr.net/npm/@reduxjs/toolkit/+esm';
+
+        const counterSlice = createSlice({
+            name: 'counter',
+            initialState: {
+                count: 0
+            },
+            reducers: {
+                incremented: (state) => {
+                    state.count += 1;
+                },
+                decremented: (state) => {
+                    state.count -= 1;
+                }
+            }
+        });
+
+
+        const store = configureStore({
+            reducer: counterSlice.reducer
+        });
+        const { incremented, decremented } = counterSlice.actions
+
+        const counterDisplay = document.getElementById("demo");
+        const incrementBtn = document.getElementById("increment-btn");
+        const decrementBtn = document.getElementById("decrement-btn");
+
+
+
+        store.subscribe(() => {
+            counterDisplay.innerText = store.getState().count;
+        });
+
+        const increment = () => {
+            store.dispatch(incremented());
+        }
+
+        const decrement = () => {
+            store.dispatch(decremented());
+        }
+
+        incrementBtn.addEventListener("click", increment);
+        decrementBtn.addEventListener("click", decrement);
+    </script>
+
+</body>
+
+</html>
+
+
+<!-- Redux -->
+<!-- import { createStore } from 'https://cdn.jsdelivr.net/npm/redux@5.0.1/+esm';
+/*
+Store
+1. State
+2. Dispatch(Action) -> Reducer
+3. Subscribe -> GetState
+*/
+
+
+const COUNTER_INCREMENT_ACTION_KEY = 'increment';
+
+function counterReducer(state = { counter: 0 }, action) {
+    if (action.type === COUNTER_INCREMENT_ACTION_KEY) {
+        return {
+            counter: state.counter,
+        }
+    }
+
+    if (action.type === 'decrement') {
+        return {
+            counter: state.counter - 1,
+        }
+    }
+}
+
+
+const store = createStore(counterReducer);
+
+function increment() {
+    store.dispatch(createAction(COUNTER_INCREMENT_ACTION_KEY));
+}
+
+function decrement() {
+    store.dispatch({ type: 'decrement', });
+} -->
