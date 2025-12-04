@@ -1,0 +1,125 @@
+1 .npm install :
+    "@react-native-firebase/app": "^23.5.0",
+    "@react-native-firebase/messaging": "^23.5.0",
+
+2.android/app/google-services.json
+
+3.android/app/build.gradle :
+apply plugin: 'com.android.application'
+apply plugin: 'com.google.gms.google-services'
+
+dependencies {
+    implementation('com.google.firebase:firebase-messaging:23.0.0')
+
+4.android/build.gradle
+  classpath ('com.google.gms:google-services:4.4.2')
+
+4 .hook/useFirebaseMessaging:
+
+import { useEffect } from 'react';
+import { Alert, PermissionsAndroid, Platform } from 'react-native';
+import messaging, {
+    getMessaging,
+    requestPermission,
+    getToken,
+    onMessage,
+    onTokenRefresh,
+    AuthorizationStatus
+} from '@react-native-firebase/messaging';
+
+const requestAndroidNotificationPermission = async () => {
+    if (Platform.OS !== 'android' || Platform.Version < 33) {
+        return true;
+    }
+
+    const status = await PermissionsAndroid.request(
+        PermissionsAndroid.PERMISSIONS.POST_NOTIFICATIONS,
+    );
+
+    return status === PermissionsAndroid.RESULTS.GRANTED;
+};
+
+const requestFcmPermission = async () => {
+    const messagingInstance = getMessaging();
+
+    const authStatus = await requestPermission(messagingInstance);
+
+    const enabled =
+        authStatus === AuthorizationStatus.AUTHORIZED ||
+        authStatus === AuthorizationStatus.PROVISIONAL;
+
+    if (!enabled) return false;
+
+    return requestAndroidNotificationPermission();
+};
+
+const showForegroundNotification = (title?: string | object, body?: string | object) => {
+    Alert.alert(String(title) || 'Garage App', String(body) || 'You have a new notification');
+};
+
+export const useFirebaseMessaging = () => {
+    useEffect(() => {
+        const initializeMessaging = async () => {
+            try {
+                const messagingInstance = getMessaging();
+
+                // Required for iOS & Android
+                await messaging().registerDeviceForRemoteMessages();
+
+                // Ask permission
+                const permissionGranted = await requestFcmPermission();
+                if (!permissionGranted) {
+                    console.warn('FCM permission not granted');
+                    return;
+                }
+
+                // Get FCM Token
+                const token = await getToken(messagingInstance);
+                console.log('FCM Token:', token);
+
+            } catch (error) {
+                console.error('Messaging init error:', error);
+            }
+        };
+
+        initializeMessaging();
+
+        const messagingInstance = getMessaging();
+
+        // Foreground notifications
+        const unsubscribeOnMessage = onMessage(messagingInstance, async remoteMessage => {
+            const title =
+                remoteMessage.notification?.title ||
+                remoteMessage.data?.title ||
+                'Garage App';
+
+            const body =
+                remoteMessage.notification?.body ||
+                remoteMessage.data?.body ||
+                'New notification';
+
+            showForegroundNotification(title, body);
+        });
+
+        // Token refresh
+        const unsubscribeOnTokenRefresh = onTokenRefresh(messagingInstance, token => {
+            console.log('FCM token refreshed:', token);
+        });
+
+        return () => {
+            unsubscribeOnMessage();
+            unsubscribeOnTokenRefresh();
+        };
+    }, []);
+};
+
+5 .App.tsx
+  useFirebaseMessaging();
+
+6. index.js
+import messaging from '@react-native-firebase/messaging';
+
+messaging().setBackgroundMessageHandler(async remoteMessage => {
+  console.log('Message in background:', remoteMessage);
+});
+
