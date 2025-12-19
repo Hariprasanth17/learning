@@ -1,0 +1,122 @@
+html
+
+@if (visible()) {
+<div class="notification-overlay">
+  <div class="scroll-notification">
+
+    <!-- Santa -->
+    <div class="santa-image">
+      <img src="/assets/santa.png" alt="Santa" />
+    </div>
+
+    <!-- Scroll Content -->
+    <div class="scroll-content">
+
+      <!-- Close Icon -->
+      <button mat-icon-button class="close-btn" (click)="close()">
+        <mat-icon>close</mat-icon>
+      </button>
+
+      <h4>Special Holiday Offer!</h4>
+      <p>Santa has brought a special offer just for you! 🎁</p>
+      <button class="btn btn-success" (click)="onSpecialOfferClick()">
+        Claim Offer
+      </button>
+    </div>
+
+  </div>
+</div>
+}
+
+css
+
+.notification-overlay {
+    position: fixed;
+    bottom: -20px;
+    right: 0px;
+    z-index: 1000;
+
+}
+
+/* Layout */
+.scroll-notification {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+/* Santa */
+.santa-image img {
+    width: 200px;
+    height: 320px;
+    object-fit: contain;
+    margin-right: -25px;
+}
+
+/* Scroll */
+.scroll-content {
+    position: relative;
+    border-radius: 20px;
+    background-image: url('/assets/elegan.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+
+    /* padding: 50px 40px; */
+    min-width: 300px;
+    min-height: 320px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    text-align: center;
+    font-family: 'Georgia', serif;
+    color: #5a3b1e;
+    box-sizing: border-box;
+}
+
+.scroll-content h4 {
+    font-weight: bold;
+    margin: 0;
+    max-width: 220px;
+    word-wrap: break-word;
+}
+
+.scroll-content p {
+    font-size: 14px;
+    margin: 0;
+    max-width: 200px;
+    word-wrap: break-word;
+}
+
+.scroll-content .btn {
+    font-weight: 600;
+    border-radius: 20px;
+    padding: 6px 20px;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 2;
+    background-color: transparent;
+    border: none;
+}
+.close-btn mat-icon {
+  font-size: 24px; 
+  font-weight: bolder; 
+}
+
+  visible = input<boolean>(false);
+
+  closed = output<void>();
+
+  close() {
+    this.closed.emit();
+  }
+  onSpecialOfferClick() {
+    console.log("hekeS");
+  }
